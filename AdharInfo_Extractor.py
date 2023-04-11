@@ -6,6 +6,9 @@ import cv2
 import glob
 import easygui
 import time
+from rich.progress import track
+import warnings
+warnings.filterwarnings('ignore')
 class AdharInfo_Extractor():
     def __init__(self,front_img:str,back_img:str):
           
@@ -118,7 +121,7 @@ if __name__ == '__main__':
     time.sleep(2)
     excel_file_path = easygui.diropenbox()
 
-    for front_img,back_img in zip(list_front_img,list_back_img):
+    for i,front_img,back_img in zip(track(range(len(list_front_img)), description="Extraction Process..."),list_front_img,list_back_img):
         
         adhar_info_extractor = AdharInfo_Extractor(front_img,back_img)
 
