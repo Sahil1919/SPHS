@@ -9,6 +9,7 @@ import time
 from rich.progress import track
 import warnings
 warnings.filterwarnings('ignore')
+
 class AdharInfo_Extractor():
     def __init__(self,front_img:str,back_img:str):
           
@@ -134,13 +135,13 @@ if __name__ == '__main__':
         details = [adhar_name, adhar_number, adhar_dob, adhar_gender, adhar_address]
         DF.loc[len(DF)+1] = details
         
-        print(adhar_name)
-        print(adhar_number)
-        print(adhar_dob)
-        print(adhar_gender)
-        print(adhar_address)
+        # print(adhar_name)
+        # print(adhar_number)
+        # print(adhar_dob)
+        # print(adhar_gender)
+        # print(adhar_address)
 
-        print("----------------------------------------------------")
+        # print("----------------------------------------------------")
 
     
     DF.to_excel(excel_file_path+"/StudentDetails.xlsx",index=False)
